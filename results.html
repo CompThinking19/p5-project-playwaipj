@@ -1,6 +1,8 @@
 <!doctype html>
 <head>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='p5.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='sketch.js') }}"></script>
   <title>BMI Calculator</title>
 </head>
 <body>
@@ -12,11 +14,11 @@
         </tr>
         <tr>
           <th>Weight (lb)</th>
-          <td><input type="text" name="weight"></td>
+          <td><input type="text" name="weight" placeholder="{{ weight }}"></td>
         </tr>
         <tr>
           <th>Height (in)</th>
-          <td><input type="text" name="height"></td>
+          <td><input type="text" name="height" placeholder="{{ height }}"></td>
         </tr>
         <tr>
           <td></td>
@@ -24,6 +26,13 @@
         </tr>
       </table>
     </form>
+    <div class="BMI">
+      Your BMI is {{ BMI }}.
+    </div>
+    <div class="perfect">
+      You are perfect the way you are!
+    </div>
+    <div id="sketch"></div>
   </center>
 </body>
 </html>
